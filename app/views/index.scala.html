@@ -1,0 +1,9 @@
+@import play.filters.csrf.CSRF._
+@(userForm: Form[Login])(implicit messages: MessagesProvider,request:RequestHeader,flash: Flash)
+@import helper._
+@helper.form(action = routes.HomeController.submit()) {
+@CSRF.formField
+@helper.inputText(userForm("name"))
+@helper.inputText(userForm("email"))
+<input type="submit" value="Submit">
+}

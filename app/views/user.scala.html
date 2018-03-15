@@ -1,0 +1,12 @@
+@()(implicit flash: Flash,request:RequestHeader)
+
+@flash.get("value").getOrElse("Welcome!")
+@main("you entered"){
+@request.session.get("name")
+@request.session.get("email")
+}
+
+
+
+
+
